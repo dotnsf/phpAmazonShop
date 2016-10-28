@@ -125,7 +125,7 @@ if( $pdo ){
     $asin = $row['asin'];
 
     $image_url2 = str_replace( "SL160", "SL400", $image_url );
-    $link = AWS_ASSOC_TAG  ? "http://www.amazon.co.jp/dp/" . $asin . "?tag=" . AWS_ASSOC_TAG . "&linkCode=as1&creative=6339" : "";
+    $link = "http://www.amazon.co.jp/dp/" . $asin . "?tag=" . AWS_ASSOC_TAG . "&linkCode=as1&creative=6339";
 
     $tr = "<tr><td>" . $code . "<br/><a class=\"single iframe\" rel=\"external\" href=\"" . $image_url2 . "\" title=\"" . $name . "\"><img src=\"" . $image_url . "\" width=\"30\" height=\"30\"/></a></td><td>" . ( $link ? "<a target=\"_blank\" href=\"" . $link . "\">" . $name . "</a>" : $name ) . "</td><td>" . $brand . "</td><td>" . $maker . "</td></tr>\n";
     echo $tr;

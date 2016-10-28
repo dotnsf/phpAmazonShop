@@ -6,9 +6,9 @@
 
 ## 0. Install
 
-* Get Amazon Associate account and get AWS Key, Secret, and Tag.
+* Get Amazon Associate account and get AWS Key, Secret. If you get Amazon Associate tag, that would be better, but that is not mandatory.
 
-* Edit credentials.php with correct information of MySQL and Amazon IDs.
+* Edit credentials.php with correct information of MySQL and Amazon IDs. If you don't get Amazon Associate tag, just leave it as brank('').
 
 * Edit crawler/amazonapi.php with node IDs what you need(https://affiliate.amazon.co.jp/gp/associates/help/t100).
 
@@ -16,9 +16,11 @@
 
 ## 1. Crawler
 
-* Run crawler/amazonapi.php to collect item information(Result would be saved under tmp/ folder).
+* Go crawler/ folder and create tmp/ subfolder.
 
-* Run crawler/db_updatemaster.php to insert result item information to DB.
+* Run amazonapi.php to collect item information(Result would be saved under tmp/ folder).
+
+* Run db_updatemaster.php to insert result item information to DB.
 
 ## 2. Web
 
