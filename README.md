@@ -12,12 +12,12 @@
 
 * (Optional: If you don't want to use sample data and want to gather your data, )Edit crawler/amazonapi.php with node IDs what you need(https://affiliate.amazon.co.jp/gp/associates/help/t100).
 
-* (Optional: If you don't want to use sample data and want to gather your data, )Run crawler/cosme_db_items_ddl.sql to create items table in MySQL DB.
+* Run crawler/cosme_db_items_ddl.sql to create items table in MySQL DB(> source crawler/cosme_db_items_ddl.sql).
 
 
 ## 1-A. Load sample data(When you want to use sample data)
 
-* Log in to mysql, and load sample data(> source sampledata.sql).
+* Log in to mysql DB, and load sample data(> source sampledata.sql).
 
 
 ## 1-B. Crawler(When you don't want to use sample data)
