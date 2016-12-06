@@ -64,13 +64,13 @@ require( '../credentials.php' );
 $q = "";
 $limit = 100;
 $offset = 0;
-if( $_GET['q'] ){
+if( isset( $_GET['q'] ) ){
   $q = $_GET['q'];
 }
-if( $_GET['limit'] ){
+if( isset( $_GET['limit'] ) ){
   $limit = $_GET['limit'];
 }
-if( $_GET['offset'] ){
+if( isset( $_GET['offset'] ) ){
   $offset = $_GET['offset'];
 }
 ?>
