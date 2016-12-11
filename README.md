@@ -31,7 +31,7 @@
 
 ## 2. Web
 
-* Access to items.php with web browser.
+* Access to index.php with web browser.
 
 ## Copyright
 
