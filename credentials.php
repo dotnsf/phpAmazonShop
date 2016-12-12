@@ -1,9 +1,9 @@
 <?php
 
 //. Amazon Associate API
-define( 'AWS_KEY', 'AWS_KEY' );
-define( 'AWS_SECRET', 'AWS_SECRET' );
-define( 'AWS_ASSOC_TAG', 'xxxxxxxx-22' );
+define( 'AWS_KEY', '(AWS_KEY)' );
+define( 'AWS_SECRET', '(AWS_SECRET)' );
+define( 'AWS_ASSOC_TAG', 'xxxxxx-22' );
 
 //. MySQL DB
 define( 'DB_NAME', 'db' );
