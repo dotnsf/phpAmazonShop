@@ -35,6 +35,6 @@
 
 ## Copyright
 
-* 2016 dotnsf@gmail.com(C) all rights reserved.
+* 2016-2017 dotnsf@gmail.com(C) all rights reserved.
 
 

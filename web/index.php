@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf8"/>
-<title>items</title>
+<title>phpAmazonShop</title>
 <script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css"/>
@@ -75,7 +75,7 @@ if( isset( $_GET['offset'] ) ){
 }
 ?>
 
-<form name="frm" method="GET" action="items.php">
+<form name="frm" method="GET" action="./">
 <input type="hidden" name="offset" value="0"/>
 <input type="hidden" name="limit" value="<?php echo $limit; ?>"/>
 <input type="text" name="q" value="<?php echo $q; ?>"/>
@@ -142,7 +142,7 @@ if( $pdo ){
     if( $q ){
       $query .= ( "&q=" . $q );
     }
-    $tr .= "<a href=\"./items.php?" . $query . "\">&lt;&lt;</a>";
+    $tr .= "<a href=\"./?" . $query . "\">&lt;&lt;</a>";
   }else{
     $tr .= "&nbsp;";
   }
@@ -155,7 +155,7 @@ if( $pdo ){
     if( $q ){
       $query .= ( "&q=" . $q );
     }
-    $tr .= "<a href=\"./items.php?" . $query . "\">&gt;&gt;</a>";
+    $tr .= "<a href=\"./?" . $query . "\">&gt;&gt;</a>";
   }else{
     $tr .= "&nbsp;";
   }
