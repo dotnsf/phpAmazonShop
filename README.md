@@ -33,6 +33,10 @@
 
 * Access to index.php with web browser.
 
+## License
+
+This code is licensed under MIT.
+
 ## Copyright
 
 * 2016-2017 dotnsf@gmail.com(C) all rights reserved.
