@@ -22,8 +22,6 @@
 
 ## 1-B. Crawler(When you don't want to use sample data)
 
-* Go crawler/ folder and create tmp/ subfolder.
-
 * Run amazonapi.php to collect item information(> php -f amazonapi.php  Result would be saved under tmp/ folder).
 
 * Run db_updatemaster.php to insert result item information to DB(> php -f db_updatemaster.php YYYYMMDD.tsv).
