@@ -9,6 +9,7 @@ $nodes = array(
 	"52912051"  //. ビューティー/男性化粧品
 );
 
+initialize_mysampledata_sql();
 foreach( $nodes as $node ){
 	getCodesFromAmazonAPI( $node );
 }

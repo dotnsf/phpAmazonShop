@@ -95,6 +95,24 @@ echo( "$line \n" );
 	return 1;
 }
 
+function initialize_mysampledata_sql(){
+	$filename = "../mysampledata.sql";
+	addLine( $filename, "drop table if exists items" );
+	addLine( $filename, "create table items( id int primary key auto_increment, code varchar(20), name varchar(1024), price int, brand varchar(1024), maker varchar(1024), image_url varchar(1024), asin varchar(20) )" );
+
+	return 1;
+}
+
+function update_mysampledata_sql( $itemcode, $itemname, $itemimageurl, $makername, $brandname, $listprice, $asin ){
+	$filename = "../mysampledata.sql";
+        $line = "insert into items(code,name,price,brand,maker,image_url,asin) values('".$itemcode."','".$itemname."',".$listprice.",'".$brandname."','".$makername."','".$itemimageurl."'.'".$asin."')";
+echo( "$line \n" );
+
+	addLine( $filename, $line );
+
+	return 1;
+}
+
 
 
 function update_master_tsv( $filename ){
@@ -195,9 +213,8 @@ function getCodesFromAmazonAPI($node){
 
 function getCodesAmazonNodeMinMax($node,$min,$max){
 	//. Page 1
-	//usleep( 1800000 );
 	usleep( 1300000 );
-echo( "node = $node : min = $min , max = $max , page = 1 \n" );
+        echo( "node = $node : min = $min , max = $max , page = 1 \n" );
 	$totalpages = getItemSearchAmazonAPI($node,$min,$max);
 
 	if( $totalpages < 11 || $max - $min == 9 ){
@@ -205,9 +222,8 @@ echo( "node = $node : min = $min , max = $max , page = 1 \n" );
 			//. Page 2+
 			$m = ( $totalpages > 10 ) ? 10 : $totalpages;
 			for( $p = 2; $p <= $m ; $p ++ ){
-				//usleep( 1800000 );
 				usleep( 1300000 );
-echo( "node = $node :  min = $min , max = $max , page = $p / $totalpages \n" );
+                                echo( "node = $node :  min = $min , max = $max , page = $p / $totalpages \n" );
 				getItemSearchAmazonAPI($node,$min,$max,$p);
 			}
 		}
@@ -316,7 +332,8 @@ function getItemSearchAmazonAPI($node,$min,$max,$item_page = 0,$aws_host = 'ecs.
 			}
 
 			//. TSV
-			update_item_master_text( $ean, $title, $image_url, $manufacturer, $brand, $listprice, $asin );
+			//update_item_master_text( $ean, $title, $image_url, $manufacturer, $brand, $listprice, $asin );
+			update_mysampledata_sql( $ean, $title, $image_url, $manufacturer, $brand, $listprice, $asin );
 
 			$idx ++;
 			try{
