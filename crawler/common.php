@@ -71,6 +71,15 @@ function trimPrice( $p ){
 	return $p;
 }
 
+function trimNL( $w ){
+	$w = trim( $w );
+        $w = str_replace( "\n", "", $w );
+        $w = str_replace( "\r", "", $w );
+        $w = str_replace( "\t", "", $w );
+
+	return $w;
+}
+
 function addLine( $filename, $line ){
 	$fno = fopen( OUTPUT_DIR . $filename, 'a' );
 	if( $fno ){
@@ -105,7 +114,7 @@ function initialize_mysampledata_sql(){
 
 function update_mysampledata_sql( $itemcode, $itemname, $itemimageurl, $makername, $brandname, $listprice, $asin ){
 	$filename = "../../mysampledata.sql";
-        $line = "insert into items(code,name,price,brand,maker,image_url,asin) values('".$itemcode."','".$itemname."',".$listprice.",'".$brandname."','".$makername."','".$itemimageurl."'.'".$asin."')";
+        $line = "insert into items(code,name,price,brand,maker,image_url,asin) values('".$itemcode."','".$itemname."',".$listprice.",'".$brandname."','".$makername."','".$itemimageurl."'.'".$asin."');";
 echo( "$line \n" );
 
 	addLine( $filename, $line );
@@ -299,31 +308,31 @@ function getItemSearchAmazonAPI($node,$min,$max,$item_page = 0,$aws_host = 'ecs.
 			$ean = "";
 			$asin = "";
 			try{
-				$image_url = trim($item->MediumImage->URL);
+				$image_url = trimNL($item->MediumImage->URL);
 			}catch( Exception $e ){
 			}
 			try{
-				$manufacturer = trim($item->ItemAttributes->Manufacturer);
+				$manufacturer = trimNL($item->ItemAttributes->Manufacturer);
 			}catch( Exception $e ){
 			}
 			try{
-				$brand = trim($item->ItemAttributes->Brand);
+				$brand = trimNL($item->ItemAttributes->Brand);
 			}catch( Exception $e ){
 			}
 			try{
-				$title = trim($item->ItemAttributes->Title);
+				$title = trimNL($item->ItemAttributes->Title);
 			}catch( Exception $e ){
 			}
 			try{
-				$listprice = trim($item->ItemAttributes->ListPrice->Amount);
+				$listprice = trimNL($item->ItemAttributes->ListPrice->Amount);
 			}catch( Exception $e ){
 			}
 			try{
-				$ean = trim($item->ItemAttributes->EAN);
+				$ean = trimNL($item->ItemAttributes->EAN);
 			}catch( Exception $e ){
 			}
 			try{
-				$asin = trim($item->ASIN);
+				$asin = trimNL($item->ASIN);
 			}catch( Exception $e ){
 			}
 
