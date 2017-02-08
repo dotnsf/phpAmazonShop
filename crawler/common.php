@@ -76,6 +76,7 @@ function trimNL( $w ){
         $w = str_replace( "\n", "", $w );
         $w = str_replace( "\r", "", $w );
         $w = str_replace( "\t", "", $w );
+        $w = str_replace( "'", "\'", $w );
 
 	return $w;
 }
@@ -114,7 +115,7 @@ function initialize_mysampledata_sql(){
 
 function update_mysampledata_sql( $itemcode, $itemname, $itemimageurl, $makername, $brandname, $listprice, $asin ){
 	$filename = "../../mysampledata.sql";
-        $line = "insert into items(code,name,price,brand,maker,image_url,asin) values('".$itemcode."','".$itemname."',".$listprice.",'".$brandname."','".$makername."','".$itemimageurl."'.'".$asin."');";
+        $line = "insert into items(code,name,price,brand,maker,image_url,asin) values('".$itemcode."','".$itemname."',".$listprice.",'".$brandname."','".$makername."','".$itemimageurl."','".$asin."');";
 echo( "$line \n" );
 
 	addLine( $filename, $line );
