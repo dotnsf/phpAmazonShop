@@ -96,7 +96,7 @@ echo( "$line \n" );
 }
 
 function initialize_mysampledata_sql(){
-	$filename = "../mysampledata.sql";
+	$filename = "../../mysampledata.sql";
 	addLine( $filename, "drop table if exists items" );
 	addLine( $filename, "create table items( id int primary key auto_increment, code varchar(20), name varchar(1024), price int, brand varchar(1024), maker varchar(1024), image_url varchar(1024), asin varchar(20) )" );
 
@@ -104,7 +104,7 @@ function initialize_mysampledata_sql(){
 }
 
 function update_mysampledata_sql( $itemcode, $itemname, $itemimageurl, $makername, $brandname, $listprice, $asin ){
-	$filename = "../mysampledata.sql";
+	$filename = "../../mysampledata.sql";
         $line = "insert into items(code,name,price,brand,maker,image_url,asin) values('".$itemcode."','".$itemname."',".$listprice.",'".$brandname."','".$makername."','".$itemimageurl."'.'".$asin."')";
 echo( "$line \n" );
 
@@ -299,31 +299,31 @@ function getItemSearchAmazonAPI($node,$min,$max,$item_page = 0,$aws_host = 'ecs.
 			$ean = "";
 			$asin = "";
 			try{
-				$image_url = $item->MediumImage->URL;
+				$image_url = trim($item->MediumImage->URL);
 			}catch( Exception $e ){
 			}
 			try{
-				$manufacturer = $item->ItemAttributes->Manufacturer;
+				$manufacturer = trim($item->ItemAttributes->Manufacturer);
 			}catch( Exception $e ){
 			}
 			try{
-				$brand = $item->ItemAttributes->Brand;
+				$brand = trim($item->ItemAttributes->Brand);
 			}catch( Exception $e ){
 			}
 			try{
-				$title = $item->ItemAttributes->Title;
+				$title = trim($item->ItemAttributes->Title);
 			}catch( Exception $e ){
 			}
 			try{
-				$listprice = $item->ItemAttributes->ListPrice->Amount;
+				$listprice = trim($item->ItemAttributes->ListPrice->Amount);
 			}catch( Exception $e ){
 			}
 			try{
-				$ean = $item->ItemAttributes->EAN;
+				$ean = trim($item->ItemAttributes->EAN);
 			}catch( Exception $e ){
 			}
 			try{
-				$asin = $item->ASIN;
+				$asin = trim($item->ASIN);
 			}catch( Exception $e ){
 			}
 

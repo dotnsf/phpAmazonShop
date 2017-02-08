@@ -6,7 +6,7 @@ drop table if exists items;
 create table if not exists items(
     id int primary key auto_increment comment 'Primary Key',
 	code varchar(20) unique comment 'JAN/EAN/UPC code',
-	name varchar(1024) comment 'tem name', 
+	name varchar(1024) comment 'item name', 
 	price int comment 'price', 
 	brand varchar(1024) default '' comment 'brand name', 
 	maker varchar(1024) default '' comment 'maker name', 
