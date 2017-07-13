@@ -106,7 +106,7 @@ echo( "$line \n" );
 }
 
 function initialize_mysampledata_sql(){
-	$filename = "../../mysampledata.sql";
+	$filename = "../mysampledata.sql";
 	addLine( $filename, "drop table if exists items" );
 	addLine( $filename, "create table items( id int primary key auto_increment, code varchar(20), name varchar(1024), price int, brand varchar(1024), maker varchar(1024), image_url varchar(1024), asin varchar(20) )" );
 
@@ -114,7 +114,7 @@ function initialize_mysampledata_sql(){
 }
 
 function update_mysampledata_sql( $itemcode, $itemname, $itemimageurl, $makername, $brandname, $listprice, $asin ){
-	$filename = "../../mysampledata.sql";
+	$filename = "../mysampledata.sql";
         $line = "insert into items(code,name,price,brand,maker,image_url,asin) values('".$itemcode."','".$itemname."',".$listprice.",'".$brandname."','".$makername."','".$itemimageurl."','".$asin."');";
 echo( "$line \n" );
 
