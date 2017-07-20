@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf8"/>
-<title>phpAmazonShop</title>
+<title>My Shop</title>
 <script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css"/>
