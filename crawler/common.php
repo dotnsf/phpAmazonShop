@@ -1,7 +1,7 @@
 <?php
 
 require_once( 'pdo.php' );
-require_once( '../credentials.php' );
+require_once( 'credentials.php' );
 
 
 define( 'OUTPUT_DIR', './tmp/' );

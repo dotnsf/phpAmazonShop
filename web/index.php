@@ -58,7 +58,7 @@ html, body, {
 <body>
 <?php
 
-require( '../credentials.php' );
+require( 'credentials.php' );
 
 
 $q = "";

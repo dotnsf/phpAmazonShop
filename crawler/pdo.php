@@ -1,6 +1,6 @@
 <?php
 
-require( '../credentials.php' );
+require( 'credentials.php' );
 
 
 function insert_items( $pdo, $code, $name, $price, $brand, $maker, $image_url, $asin ){
