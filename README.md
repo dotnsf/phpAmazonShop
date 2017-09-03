@@ -24,9 +24,17 @@
 
 ## 1-B. Crawler(When you don't want to use sample data)
 
-* Change directory crawler/, and Run amazonapi.php to collect item information(> php -f amazonapi.php  Result would be saved as ../mysampledata.sql).
+* Change directory crawler/, and Run amazonapi.php to collect item information(> php -f amazonapi.php  Result would be saved as ./mysampledata.sql).
 
 * Change parent directory .., log in to mysql DB, and load created data(> source mysampledata.sql)
+
+    * > drop table items;
+
+    * > source cosme_db_items_ddl.sql
+
+    * > source crawler/cosme_db_items_ddl.sql
+
+    * > quit
 
 
 ## 2. Web
