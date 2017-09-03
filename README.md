@@ -32,7 +32,7 @@
 
     * > source cosme_db_items_ddl.sql
 
-    * > source crawler/cosme_db_items_ddl.sql
+    * > source crawler/mysampledata.sql
 
     * > quit
 
